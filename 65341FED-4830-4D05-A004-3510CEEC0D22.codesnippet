@@ -9,7 +9,7 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>extension ViewController: UICollectionViewDataSource {
+	<string>extension &lt;#Class#&gt;: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -&gt; Int {
         return &lt;#Int#&gt;
     }
