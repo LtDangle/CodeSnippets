@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>snipJSONParsingService</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>class JSONParsingService {
+    static func parseJSONFile(filename: String, type: String) -&gt; &lt;#customCodableObject#&gt;? {
+        var object: &lt;#customCodableObject#&gt;? = nil
+        if let pathname = Bundle.main.path(forResource: filename, ofType: type) {
+            guard let jsonData = FileManager.default.contents(atPath: pathname) else { return nil }
+            do {
+                let decoder = JSONDecoder()
+                object = try decoder.decode(&lt;#customCodableObject#&gt;.self, from: jsonData)
+            } catch {
+                print("read json error: \(error.localizedDescription)")
+            }
+        }
+        return object
+    }
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>747FDD32-5E5C-4FFE-A87D-CFACBA0D765C</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>JSONParsingService Class</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>snipSetupViewFunction</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>private func setup&lt;#View#&gt;() {
+        addSubview(&lt;#View#&gt;)
+        &lt;#View#&gt;.translatesAutoresizingMaskIntoConstraints = false
+        [&lt;#NSLayoutConstraint#&gt;].forEach{$0.isActive = true}
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>DC7C0F1C-747D-43C3-AE83-344A86A54029</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Generic</string>
+	<key>IDECodeSnippetTitle</key>
+	<string> Setup Property View Function</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>

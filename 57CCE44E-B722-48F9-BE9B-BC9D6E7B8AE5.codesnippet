@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>setupImageCacher</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>import UIKit
+
+class ImageCache {
+    private init() {}
+    static let manager = ImageCache()
+    
+    private let sharedCached = NSCache&lt;NSString, UIImage&gt;()
+    
+    // get current cached image
+    func cachedImage(url: URL) -&gt; UIImage? {
+        // print(url.absoluteString)
+        if let image = sharedCached.object(forKey: url.absoluteString as NSString) {
+            return image
+        }
+        print("image wasn't in cache")
+        return nil
+    }
+    
+    // process image and store in cache
+    func processImageInBackground(imageURL: URL, completion: @escaping(Error?, UIImage?) -&gt; Void) {
+        print("caching image with url: ", imageURL.absoluteString)
+        DispatchQueue.global().async {
+            do {
+                let imageData = try Data.init(contentsOf: imageURL)
+                let image = UIImage.init(data: imageData)
+                
+                // store image in cache
+                if let image = image {
+                    self.sharedCached.setObject(image, forKey: imageURL.absoluteString as NSString)
+                    print("cached image with url: \(imageURL.absoluteString)")
+                }
+                completion(nil, image)
+            } catch {
+                print("image processing error: \(error.localizedDescription)")
+                completion(error, nil)
+            }
+        }
+    }
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>57CCE44E-B722-48F9-BE9B-BC9D6E7B8AE5</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Generic</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>ImageCache</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

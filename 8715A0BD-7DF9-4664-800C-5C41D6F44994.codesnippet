@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>snipLazyVarCollectionView</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>lazy var collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = &lt;#UICollectionViewScrollDirection#&gt;
+        let cv = UICollectionView(frame: self.view.bounds, collectionViewLayout: layout)
+        cv.backgroundColor = .red
+        cv.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "CollectionCell")
+        return cv
+    }()</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>8715A0BD-7DF9-4664-800C-5C41D6F44994</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Generic</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>lazyCollectionView</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
